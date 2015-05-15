@@ -1,0 +1,12 @@
+INCLUDE_PATH=-I.
+
+hello: Main.o Hello.o
+	g++ -o $@ Main.o Hello.o
+
+Main.o: Main.cpp Hello.h
+	g++ $(INCLUDE_PATH) -c Main.cpp
+
+Hello.o: Hello.cpp Hello.h
+	g++ $(INCLUDE_PATH) -c Hello.cpp
+
+
